@@ -49,7 +49,7 @@ function init() {
     0.1,
     100
   );
-  camera.position.set(0.5, 1, 2);
+  camera.position.set(2, 2, 2);
 
   scene = new THREE.Scene();
   scene.background = null
@@ -62,9 +62,9 @@ function init() {
   // add the example meshes
 
   const geometries = [
-    new THREE.BoxGeometry(0.4, 0.4, 0.4),
-    new THREE.IcosahedronGeometry(0.3),
-    new THREE.TorusKnotGeometry(0.4, 0.05, 256, 24, 1, 3),
+    new THREE.BoxGeometry(0.3, 0.3, 0.3),
+    new THREE.IcosahedronGeometry(0.22),
+    new THREE.TorusKnotGeometry(0.3, 0.03, 198, 12, 1, 3),
   ];
 
   const material = new THREE.MeshNormalMaterial();
@@ -75,7 +75,7 @@ function init() {
     const geometry = geometries[i];
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.y = 0.1;
-    mesh.position.x = Math.cos(angle) / 2.0;
+    mesh.position.x = Math.cos(angle) / 2.0 + 1;
     mesh.position.z = Math.sin(angle) / 2.0;
     scene.add(mesh);
     meshes.push(mesh);
